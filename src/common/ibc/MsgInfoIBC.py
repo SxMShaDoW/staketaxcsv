@@ -217,6 +217,9 @@ class MsgInfoIBC:
         elif denom == "osmo":
             # Handle abnormal denom value gracefully
             return denom.upper()
+        elif denom.startswith("ibc/295548A78785A1007F232DE286149A6FF512F180AF5657780FC89C009E2C348F"):
+            #handle the IBC channel of axlUSDC, but this doesn't belong here. need to figure out long term spot.
+            return "USDC"
         else:
             raise Exception("Unexpected denom={}".format(denom))
 

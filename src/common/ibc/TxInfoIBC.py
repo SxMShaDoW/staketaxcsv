@@ -8,7 +8,7 @@ import common.ibc.constants
 class TxInfoIBC(TxInfo):
 
     def __init__(self, txid, timestamp, fee, fee_currency, wallet_address, msgs, mintscan_label, exchange=None):
-        url = "https://mintscan.io/{}/txs/{}".format(mintscan_label, txid)
+        url = "https://finder.kujira.app/{}/tx/{}".format(mintscan_label, txid)
         if not exchange:
             exchange = "{}_blockchain".format(mintscan_label)
         super().__init__(txid, timestamp, fee, fee_currency, wallet_address, exchange, url)
